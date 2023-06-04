@@ -3,7 +3,8 @@ import Subscription from '../components/Subscription';
 //const { Keypair } = require("@solana/web3.js");
 import toast, { Toaster } from "react-hot-toast"
 import { useEffect, useState } from 'react';
-import { useSession } from 'next-auth/react'
+//Use session es para front
+import { useSession, signOut } from 'next-auth/react'
 import { useRouter } from 'next/router';
 
 function Profile() {
@@ -50,11 +51,14 @@ function Profile() {
 
           <button
             type='submit'
-            onClick={signIn}
+            onClick={() => signIn()}
             className='bg-violet-800 grow hover:bg-violet-900 text-white font-bold py-2 px-4 rounded'
           >
             Conect Wallet
           </button>
+
+          <button className='btn-error py-2 px-4 rounded' onClick={() => signOut()}>sign out</button>
+
         </div>
 
       </section>
