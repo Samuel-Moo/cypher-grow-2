@@ -1,12 +1,12 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 
-export default function Loginbtn() {
+export default function loginbtn() {
   const { data: session } = useSession()
   if (session) {
     return (
       <>
 
-        <a className="btn" href="../login">
+<a className="btn" href="../login">
             Log In
         </a>
       </>
